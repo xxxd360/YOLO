@@ -62,3 +62,18 @@ from ultralytics.utils.downloads import download
 # yolo = YOLO("runs/detect/train2/weights/best.pt",task="det")
 # result = yolo(source="D:\pytorch.pycharm\Resources\something.mp4",show=True,conf=0.5,iou=0.8)
 
+
+path: bvn  # dataset root dir
+train: images/train # train images (relative to 'path') 4 images
+val: images/val # val images (relative to 'path') 4 images
+test: # test images (optional)
+
+# Classes
+names:
+  0: cup
+  1: gloves
+  2: headphones
+
+# Download script/URL (optional)
+download: https://github.com/ultralytics/assets/releases/download/v0.0.0/coco8.zip
+
