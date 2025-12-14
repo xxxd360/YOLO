@@ -1,0 +1,38 @@
+from ultralytics import YOLO
+import cv2
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
+# 加载模型
+model = YOLO("yolo11n.pt")
+# 试检测
+# url = "https://ultralytics.com/images/zidane.jpg"
+# results = model(url,show=True,save=True)
+# 视频流读取
+# video_path = "Resources/fire.mp4"
+# cap = cv2.VideoCapture(video_path)
+# while cap.isOpened():
+#     ret, frame = cap.read()
+#     if ret:
+#         cv2.imshow("frame", frame)
+#     if cv2.waitKey(1) & 0xFF == ord('q'):
+#         break
+# # 计数器
+# num = 0
+# # # 间隔帧;
+# save_step = 50
+# while True:
+#     ret,frame=cap.read()
+#     if not ret:
+#         break
+#     num += 1
+#     if num % save_step == 0:
+#         cv2.imwrite("Resources/frame/frame%d.jpg" % num, frame)
+# #释放资源，关闭窗口
+# cap.release()
+# cv2.destroyAllWindows()
+# model.train(data='YOLO11.yaml',workers=0,epochs=100,batch=16)
+source="D:\pytorch.pycharm\Resources\\fire.mp4"
+
+yolo = YOLO("runs/detect/train/weights/best.pt",task="det")
+result = yolo(source="D:\pytorch.pycharm\Resources\\fire.mp4",conf=0.5,iou=0.8,save=True)
