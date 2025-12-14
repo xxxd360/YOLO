@@ -1,0 +1,64 @@
+import cv2
+from ultralytics import YOLO
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
+import torch
+import cv2
+import matplotlib.pyplot as plt
+from ultralytics.utils.downloads import download
+
+# 下载COCO128数据集
+# download("https://github.com/ultralytics/assets/releases/download/v0.0.0/coco128.zip",dir="D:\pytorch.pycharm\Resources")
+
+# 下载测试视频
+# download("http://vjs.zencdn.net/v/oceans.mp4",dir="D:\\pytorch.pycharm\\Resources")
+
+
+
+
+# yolo = YOLO("./yolov8n.pt",task="det")
+# result = yolo(source="D:\\pytorch.pycharm\\Resources/bus.jpg",save = True,conf=0.25,iou=0.7)
+# conf 置信度阈值，默认0.25
+# iou 交并比阈值，默认0.45
+# save 保存检测结果，默认False
+# result = yolo(source="screen")对屏幕
+# result = yolo(source="0")#摄像头
+
+
+# 可用jupyter notebook命令：
+# 结果可视化
+# %matplotlib inline
+# plt.imshow(result[0].plot()[:, :, ::-1])
+# plt.show()
+# boxes信息
+# result[0].boxes
+
+
+# # 数据集的准备：
+# video_path = "Resources/something.mp4"
+# video=cv2.VideoCapture(video_path)
+# # # 计数器
+# num = 0
+# # # 间隔帧;
+# save_step = 5
+# while True:
+#     ret,frame=video.read()
+#     if not ret:
+#         break
+#     num += 1
+#     if num % save_step == 0:
+#         cv2.imwrite("Resources/frame%d.jpg" % num, frame)
+# # 另一种方式：
+# plt.imshow(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+#
+
+
+# 模型训练
+# model = YOLO('yolov8n.pt')
+#
+# model.train(data='YOLO bvn.yaml',workers=0,epochs=20,batch=16)
+
+# 模型测试
+# yolo = YOLO("runs/detect/train2/weights/best.pt",task="det")
+# result = yolo(source="D:\pytorch.pycharm\Resources\something.mp4",show=True,conf=0.5,iou=0.8)
+
