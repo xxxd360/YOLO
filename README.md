@@ -1,4 +1,11 @@
 # YOLO
+## 项目结构
+├─assert ----图片资源   
+├─config ----配置文件   
+├─result ----运行结果   
+├─models ----模型权重    
+## 依赖安装
+ultralytics https://pypi.org/project/ultralytics/
 ## YOLO的使用
 YOLO的初步体验流程上基本一致：
 1：加载模型       2：用官方资源试检测预训练模型  
