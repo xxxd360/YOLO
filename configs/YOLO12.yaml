@@ -1,0 +1,10 @@
+path: bvn
+train: images/train
+val: images/val
+test:
+
+names:
+    0: Minyi
+    1: Xuxuan
+    2: NPC1
+    3: NPC2
